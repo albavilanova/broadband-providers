@@ -11,7 +11,7 @@ model Provider {
   providerId Int        @id @default(autoincrement())
   provider   String
   location   Location[]
-  deals      Deal[]
+  products   Product[]
 }
 
 model Location {
@@ -24,13 +24,20 @@ model Location {
   provider   Provider @relation(fields: [providerId], references: [providerId])
 }
 
-model Deal {
-  dealId    Int       @id @default(autoincrement())
+model Product {
+  productId     Int        @id @default(autoincrement())
   downloadSpeed Float
   uploadSpeed   Float
-  price Float
-  startDate DateTime
-  endDate DateTime
-  provider      Provider? @relation(fields: [providerId], references: [providerId])
+  price         Float
+  provider      Provider?  @relation(fields: [providerId], references: [providerId])
   providerId    Int?
+  contracts     Contract[]
+}
+
+model Contract {
+  contractId Int      @id @default(autoincrement())
+  productId  Int      @unique
+  product    Product  @relation(fields: [productId], references: [productId])
+  startDate  DateTime
+  endDate    DateTime
 }
