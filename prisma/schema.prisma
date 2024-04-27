@@ -7,29 +7,30 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  userId    String     @id @default(cuid())
-  firstName String
-  lastName  String
-  email     String
-  locations Location[]
-  contracts Contract[]
-}
-
-model Contract {
-  contractId    Int    @id @default(autoincrement())
-  provider      String
-  downloadSpeed Float
-  uploadSpeed   Float
-  userId        String
-  user          User   @relation(fields: [userId], references: [userId])
+model Provider {
+  providerId Int        @id @default(autoincrement())
+  provider   String
+  location   Location[]
+  deals      Deal[]
 }
 
 model Location {
-  locationId Int    @id @default(autoincrement())
+  locationId Int      @id @default(autoincrement())
   country    String
   state      String
   city       String
-  userId     String
-  user       User   @relation(fields: [userId], references: [userId])
+  postalCode Int
+  providerId Int      @unique
+  provider   Provider @relation(fields: [providerId], references: [providerId])
+}
+
+model Deal {
+  dealId    Int       @id @default(autoincrement())
+  downloadSpeed Float
+  uploadSpeed   Float
+  price Float
+  startDate DateTime
+  endDate DateTime
+  provider      Provider? @relation(fields: [providerId], references: [providerId])
+  providerId    Int?
 }
