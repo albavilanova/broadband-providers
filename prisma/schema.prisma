@@ -8,8 +8,18 @@ datasource db {
 }
 
 model User {
-  id            String     @id @default(cuid())
-  firstName     String
-  lastName      String
-  email         String
+  userId    String     @id @default(cuid())
+  firstName String
+  lastName  String
+  email     String
+  locations Location[]
+}
+
+model Location {
+  locationId Int     @id @default(autoincrement())
+  country    String
+  state      String
+  city       String
+  userId     String
+  user       User    @relation(fields: [userId], references: [userId])
 }
