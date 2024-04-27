@@ -13,13 +13,23 @@ model User {
   lastName  String
   email     String
   locations Location[]
+  contracts Contract[]
+}
+
+model Contract {
+  contractId    Int    @id @default(autoincrement())
+  provider      String
+  downloadSpeed Float
+  uploadSpeed   Float
+  userId        String
+  user          User   @relation(fields: [userId], references: [userId])
 }
 
 model Location {
-  locationId Int     @id @default(autoincrement())
+  locationId Int    @id @default(autoincrement())
   country    String
   state      String
   city       String
   userId     String
-  user       User    @relation(fields: [userId], references: [userId])
+  user       User   @relation(fields: [userId], references: [userId])
 }
