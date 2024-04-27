@@ -8,10 +8,18 @@ datasource db {
 }
 
 model Provider {
-  providerId Int        @id @default(autoincrement())
+  providerId Int       @id @default(autoincrement())
   provider   String
-  location   Location[]
   products   Product[]
+}
+
+model Product {
+  productId  Int        @id @default(autoincrement())
+  price      Float
+  locations  Location[]
+  providerId Int        @unique
+  provider   Provider   @relation(fields: [providerId], references: [providerId])
+  contracts  Contract[]
 }
 
 model Location {
@@ -20,18 +28,8 @@ model Location {
   state      String
   city       String
   postalCode Int
-  providerId Int      @unique
-  provider   Provider @relation(fields: [providerId], references: [providerId])
-}
-
-model Product {
-  productId     Int        @id @default(autoincrement())
-  downloadSpeed Float
-  uploadSpeed   Float
-  price         Float
-  provider      Provider?  @relation(fields: [providerId], references: [providerId])
-  providerId    Int?
-  contracts     Contract[]
+  productId  Int      @unique
+  product    Product  @relation(fields: [productId], references: [productId])
 }
 
 model Contract {
