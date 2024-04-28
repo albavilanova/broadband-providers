@@ -1,0 +1,14 @@
+services:
+  postgres:
+    container_name: weather_data_providers_db
+    image: postgres
+    ports:
+    - '5432:5432'
+    volumes: 
+      - db:/var/lib/postgresql/data
+    restart: unless-stopped
+    environment:
+    - POSTGRES_PASSWORD=postgres
+    - POSTGRES_USER=postgres
+volumes:
+    db:
