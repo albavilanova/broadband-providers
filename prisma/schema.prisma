@@ -8,17 +8,18 @@ datasource db {
 }
 
 model Provider {
-  providerId Int        @id @default(autoincrement())
-  provider   String
-  products   Product[]
-  contracts  Contract[]
+  providerId   Int        @id @default(autoincrement())
+  name         String
+  headquarters String
+  products     Product[]
+  contracts    Contract[]
 }
 
 model Product {
   productId  Int        @id @default(autoincrement())
-  price      Float
-  queries    Int
+  price      String
   variables  String[]
+  countries  Int
   locations  Location[]
   providerId Int        @unique
   provider   Provider   @relation(fields: [providerId], references: [providerId])
