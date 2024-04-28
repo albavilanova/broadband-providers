@@ -23,7 +23,7 @@ docker inspect <hash>
 Create an .env file containing:
 
 ```
-DATABASE_URL="postgresql://postgres:postgres@<IP-address>:5432/postgres"
+DATABASE_URL="postgresql://postgres-user:postgres-password@<IP-address>:5432/postgres"
 ```
 
 Push the schema and seed the database: 
