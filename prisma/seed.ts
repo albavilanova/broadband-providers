@@ -2,27 +2,48 @@ import { PrismaClient } from "@prisma/client";
 
 const db = new PrismaClient();
 
-// Add CustomWeather provider to table
+// Add CustomWeather provider
 const CustomWeather = await db.provider.create({
     data: {
         name: "CustomWeather",
-        headquarters: "San Francisco, California, United States",
+        headquarters: "United States",
         products: {
             createMany: {
                 data: [
                     {
                         "name": "Ski Resort Weather Forecasts And Condition Reports",
-                        "price": "$225/month",
-                        "countries": 248
+                        "coverage": ["Global"]
                     },
                     {
                         "name": "Real-Time Earthquake Reports",
-                        "price": "$150/month",
-                        "countries": 249
+                        "coverage": ["Global"]
                     }
                 ]
             }
         }
     }
 })
-console.log("Provider CustomWeather was added")
+console.log("Data from CustomWeather was added")
+
+// Add Meteosource Weather provider
+const MeteosourceWeather = await db.provider.create({
+    data: {
+        name: "Meteosource Weather",
+        headquarters: "Czech Republic",
+        products: {
+            createMany: {
+                data: [
+                    {
+                        "name": "Solar power and radiation and wind power forecasts",
+                        "coverage": ["Global"]
+                    },
+                    {
+                        "name": "Air quality forecasts",
+                        "coverage": ["Global"]
+                    }
+                ]
+            }
+        }
+    }
+})
+console.log("Data from Meteosource Weather was added")

@@ -17,8 +17,7 @@ model Provider {
 model Product {
   productId  Int      @id @default(autoincrement())
   name       String
-  price      String
-  countries  Int
+  coverage   String[]
   providerId Int
   provider   Provider @relation(fields: [providerId], references: [providerId])
   users      User[]
