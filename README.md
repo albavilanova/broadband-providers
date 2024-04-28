@@ -33,6 +33,12 @@ bunx prisma db push
 bunx prisma db seed
 ```
 
+You can now check its content easily with:
+
+```
+bunx prisma studio
+```
+
 ## Scripts to test CRUD operations:
 
 **Create a new user**
