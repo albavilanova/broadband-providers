@@ -47,3 +47,24 @@ const MeteosourceWeather = await db.provider.create({
     }
 })
 console.log("Data from Meteosource Weather was added")
+
+// Create users
+const users = await db.user.createMany({
+    data: [
+        {
+            "firstName": "Alba",
+            "lastName": "Vilanova",
+            "email": "alba.vilanova@gmail.com",
+            "organization": "BSC",
+            "position": "Research engineer",
+        },
+        {
+            "firstName": "David",
+            "lastName": "Gómez",
+            "email": "david.gomez@gmail.com",
+            "organization": "Kaya",
+            "position": "Web developer"
+        }
+    ]
+})
+console.log("Users were added")
