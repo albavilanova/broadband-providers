@@ -1,6 +1,6 @@
 import db from "./db";
 
-// First test: Create a new user
+// First script: Create a new user
 // Run using bun run new-user.ts <first-name> <last-name> <organization> <position> <emails>
 
 // Get args from command line
