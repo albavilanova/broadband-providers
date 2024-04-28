@@ -7,16 +7,33 @@ const CustomWeather = await db.provider.create({
   data: {
     name: "CustomWeather",
     headquarters: "United States",
+    url: "https://customweather.com/",
     products: {
       createMany: {
         data: [
           {
-            name: "Ski Resort Weather Forecasts And Condition Reports",
-            coverage: ["Global"],
+            name: "Historical Forecast Data",
+            variables: [
+              "temperature",
+              "wind speed",
+              "wind direction",
+              "humidity",
+              "comfort level",
+              "UV index",
+              "probability of precipitation",
+              "visibility",
+            ],
+            startDate: new Date('2009-08-02'),
+            formats: ["json", "xml", "csv"],
           },
           {
-            name: "Real-Time Earthquake Reports",
-            coverage: ["Global"],
+            name: "U.S. Air Quality Forecasts",
+            variables: [
+              "primary air pollutant",
+              "ozone",
+              "aqi"
+            ],
+            formats: ["json", "xml", "csv"],
           },
         ],
       },
@@ -30,17 +47,28 @@ const MeteosourceWeather = await db.provider.create({
   data: {
     name: "Meteosource Weather",
     headquarters: "Czech Republic",
+    url: "https://www.meteosource.com/",
     products: {
       createMany: {
         data: [
           {
-            name: "Solar power and radiation and wind power forecasts",
-            coverage: ["Global"],
-          },
-          {
             name: "Air quality forecasts",
-            coverage: ["Global"],
-          },
+            variables: [
+              "aerosol_550",
+              "air_quality",
+              "co_surface",
+              "dust_550nm",
+              "dust_mixing_ratio_05",
+              "no2_surface",
+              "no_surface",
+              "ozone_surface",
+              "ozone_total",
+              "pm10",
+              "pm25",
+              "so2_surface"
+            ],
+            formats: ["json"]
+          }
         ],
       },
     },
@@ -56,14 +84,14 @@ const users = await db.user.createMany({
       lastName: "Vilanova",
       organization: "BSC",
       position: "Research engineer",
-      emails: ["alba.vilanova@gmail.com"],
+      email: "alba.vilanova@gmail.com",
     },
     {
       firstName: "David",
       lastName: "Gómez",
       organization: "Kaya",
       position: "Web developer",
-      emails: ["david.gomez@gmail.com"],
+      email: "david.gomez@gmail.com",
     },
   ],
 });

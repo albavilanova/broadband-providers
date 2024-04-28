@@ -11,15 +11,20 @@ model Provider {
   providerId   Int       @id @default(autoincrement())
   name         String    @unique
   headquarters String
+  url          String
   products     Product[]
 }
 
 model Product {
-  productId  Int      @id @default(autoincrement())
+  productId  Int       @id @default(autoincrement())
   name       String
   coverage   String[]
+  variables  String[]
+  startDate  DateTime?
+  endDate    DateTime?
+  formats    String[]
   providerId Int
-  provider   Provider @relation(fields: [providerId], references: [providerId])
+  provider   Provider  @relation(fields: [providerId], references: [providerId])
   users      User[]
 }
 
@@ -30,5 +35,6 @@ model User {
   organization String
   position     String
   products     Product[]
-  emails       String[]
+  email        String    @unique
+  createdAt    DateTime  @default(now())
 }

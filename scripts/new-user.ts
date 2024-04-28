@@ -1,25 +1,25 @@
-import db from "./db";
+// CREATE OPERATION: Create a new user
+// Run using bun run new-user.ts <first-name> <last-name> <organization> <position> <email>
 
-// First script: Create a new user
-// Run using bun run new-user.ts <first-name> <last-name> <organization> <position> <emails>
+import db from "./db";
 
 // Get args from command line
 if (process.argv.length < 7) {
-    console.error("Usage: bun new-user.ts <first-name> <last-name> <organization> <position> <emails>");
+    console.error("Usage: bun new-user.ts <first-name> <last-name> <organization> <position> <email>");
     process.exit(1);
 }
 const [_bun, _script, ...args] = process.argv;
 
 // Store user in db
 try {
-    const [firstName, lastName, organization, position, ...emails] = args;
+    const [firstName, lastName, organization, position, email] = args;
     const newUser = await db.user.create({
         data: {
         firstName,
         lastName,
         position,
         organization,
-        emails: emails
+        email: email
         }
     });
     console.log("You created a new user:", newUser);

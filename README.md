@@ -44,17 +44,17 @@ bunx prisma studio
 **Create a new user**
 
 ```
-bun run new-user.ts <first-name> <last-name> <organization> <position> <emails>
+bun run scripts/new-user.ts <first-name> <last-name> <organization> <position> <email>
 ```
 
 **Find products**
 
 To find all products:
 ```
-bun run find-products.ts
+bun run scripts/find-products.ts
 ```
 
 To find all products by provider
 ```
-bun run find-products.ts <provider>
+bun run scripts/find-products.ts <provider>
 ```

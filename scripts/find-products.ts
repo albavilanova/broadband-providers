@@ -1,8 +1,8 @@
-import db from "./db";
-
-// Second script: Find products
+// READ OPERATION: Find products
 // To find all products: bun run find-products.ts
 // To find all products by provider: bun run find-products.ts <provider>
+
+import db from "./db";
 
 const [_bun, _script, ...args] = process.argv;
 
