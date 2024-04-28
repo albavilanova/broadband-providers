@@ -2,7 +2,38 @@
 
 Based on three entities, this database model is based on a schema that could be used to obtain information on different weather data providers.
 
-Scripts to test CRUD operations:
+## Initialization
+
+Create and run the Postgres container by using:
+
+```
+docker compose -f compose.yml up
+```
+
+Get the container ID (hash) of the running container by: 
+``` 
+docker ps
+```
+
+And proceed to inspect it to find the corresponding IP address:
+```
+docker inspect <hash>
+```
+
+Create an .env file containing:
+
+```
+DATABASE_URL="postgresql://postgres:postgres@<IP-address>:5432/postgres"
+```
+
+Push the schema and seed the database: 
+
+```
+bunx prisma db push
+bunx prisma db seed
+```
+
+## Scripts to test CRUD operations:
 
 **Create a new user**
 
