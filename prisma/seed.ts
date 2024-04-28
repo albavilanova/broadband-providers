@@ -1,24 +1,28 @@
 import { PrismaClient } from "@prisma/client";
-import fs from "fs";
 
 const db = new PrismaClient();
 
-// Add data to providers table
-const providersInfo = JSON.parse(fs.readFileSync("./prisma/providers.json", "utf-8"));
-const providers = await db.provider.createMany({
-    data: providersInfo.map((provider: any) => ({
-        name: provider.name,
-        headquarters: provider.headquarters,
+// Add CustomWeather provider to table
+const CustomWeather = await db.provider.create({
+    data: {
+        name: "CustomWeather",
+        headquarters: "San Francisco, California, United States",
         products: {
             createMany: {
-                data: provider.products.map((product: any) => ({
-                    name: product.name,
-                    price: product.price,
-                    countries: product.countries
-                }))
+                data: [
+                    {
+                        "name": "Ski Resort Weather Forecasts And Condition Reports",
+                        "price": "$225/month",
+                        "countries": 248
+                    },
+                    {
+                        "name": "Real-Time Earthquake Reports",
+                        "price": "$150/month",
+                        "countries": 249
+                    }
+                ]
             }
         }
-    }))
-});
-
-console.log("Providers table was created")
+    }
+})
+console.log("Provider CustomWeather was added")
