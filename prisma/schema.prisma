@@ -24,11 +24,11 @@ model Product {
 }
 
 model User {
-  userId       String  @id @default(cuid())
+  userId       String    @id @default(cuid())
   firstName    String
   lastName     String
-  email        String
   organization String
   position     String
   products     Product[]
+  emails       String[]
 }
