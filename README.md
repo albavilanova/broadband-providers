@@ -56,10 +56,34 @@ bunx prisma studio
 bun run scripts/create/new-user.ts <first-name> <last-name> <organization> <position> <email>
 ```
 
+Example:
+
+```
+bun scripts/create/new-user.ts Miguel Villarino Amrum "Senior researcher" miguel.villarino@amrum.com
+```
+
 **Create a new provider**
 
 ```
 bun run scripts/create/new-provider.ts <name> <headquarters> <url>
+```
+
+Example:
+
+```
+bun scripts/create/new-provider.ts Meteomatics Switzerland https://www.meteomatics.com/
+```
+
+**Create a new product**
+
+```
+bun scripts/create/new-product.ts <providerName> <name> <variables> <startDate> <endDate> <formats>
+```
+
+Example:
+
+```
+bun scripts/create/new-product.ts CustomWeather "Wind atlas" "['Wind speed', 'Wind direction']" 2019-01-17T21:00:00.000Z 2019-01-17T21:00:00.000Z csv
 ```
 
 ### Read

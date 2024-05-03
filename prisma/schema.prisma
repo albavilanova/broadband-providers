@@ -17,8 +17,7 @@ model Provider {
 
 model Product {
   productId  Int       @id @default(autoincrement())
-  name       String
-  coverage   String[]
+  name       String    @unique
   variables  String[]
   startDate  DateTime?
   endDate    DateTime?

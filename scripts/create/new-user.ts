@@ -4,7 +4,7 @@
 import db from "../db";
 
 // Get args from command line
-if (process.argv.length < 7) {
+if (process.argv.length !== 7) {
   console.error(
     "Usage: bun new-user.ts <first-name> <last-name> <organization> <position> <email>"
   );

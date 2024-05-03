@@ -4,7 +4,7 @@
 import db from "../db";
 
 // Get args from command line
-if (process.argv.length < 5) {
+if (process.argv.length !== 5 ) {
   console.error("Usage: bun new-provider.ts <name> <headquarters> <url>");
   process.exit(1);
 }
