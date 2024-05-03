@@ -48,7 +48,7 @@ bunx prisma studio
 
 ## Scripts to test CRUD operations:
 
-### Create
+### 1. Create
 
 **Create a new user**
 
@@ -86,7 +86,7 @@ Example:
 bun scripts/create/new-product.ts CustomWeather "Wind atlas" "['Wind speed', 'Wind direction']" 2019-01-17T21:00:00.000Z 2019-01-17T21:00:00.000Z csv
 ```
 
-### Read
+### 2. Read
 
 **Find products**
 
@@ -99,3 +99,7 @@ To find all products by provider
 ```
 bun run scripts/read/find-products.ts <provider>
 ```
+
+### 3. Update
+
+### 4. Delete
