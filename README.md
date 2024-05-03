@@ -26,9 +26,11 @@ Create an .env file containing:
 DATABASE_URL="postgresql://postgres-user:postgres-password@<IP-address>:5432/postgres"
 ```
 
-Push the schema and seed the database: 
+Install the dependencies, generate and push the schema and seed the database: 
 
 ```
+bun install
+bunx prisma generate
 bunx prisma db push
 bunx prisma db seed
 ```
@@ -41,11 +43,15 @@ bunx prisma studio
 
 ## Scripts to test CRUD operations:
 
+### Create
+
 **Create a new user**
 
 ```
-bun run scripts/new-user.ts <first-name> <last-name> <organization> <position> <email>
+bun run scripts/create/new-user.ts <first-name> <last-name> <organization> <position> <email>
 ```
+
+### Read
 
 **Find products**
 
@@ -56,5 +62,5 @@ bun run scripts/find-products.ts
 
 To find all products by provider
 ```
-bun run scripts/find-products.ts <provider>
+bun run scripts/read/find-products.ts <provider>
 ```
