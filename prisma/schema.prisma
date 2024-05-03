@@ -26,6 +26,7 @@ model Product {
   providerId Int
   provider   Provider  @relation(fields: [providerId], references: [providerId])
   users      User[]
+  reviews    Review[]
 }
 
 model User {
@@ -37,4 +38,14 @@ model User {
   products     Product[]
   email        String    @unique
   createdAt    DateTime  @default(now())
+  reviews      Review[]
+}
+
+model Review {
+  reviewId  Int     @id @default(autoincrement())
+  message   String
+  userId    String
+  user      User    @relation(fields: [userId], references: [userId])
+  productId Int
+  product   Product @relation(fields: [productId], references: [productId])
 }
