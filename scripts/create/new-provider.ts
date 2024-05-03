@@ -10,7 +10,7 @@ if (process.argv.length < 5) {
 }
 const [_bun, _script, ...args] = process.argv;
 
-// Store user in db
+// Store provider in db
 try {
   const [name, headquarters, url] = args;
   const newProvider = await db.provider.create({
