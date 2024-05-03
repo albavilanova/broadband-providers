@@ -56,6 +56,12 @@ bunx prisma studio
 bun run scripts/create/new-user.ts <first-name> <last-name> <organization> <position> <email>
 ```
 
+**Create a new provider**
+
+```
+bun run scripts/create/new-provider.ts <name> <headquarters> <url>
+```
+
 ### Read
 
 **Find products**
