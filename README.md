@@ -12,7 +12,7 @@ docker compose -f compose.yml up
 
 Get the container ID (hash) of the running container by: 
 ``` 
-docker ps
+docker ps -a
 ```
 
 And proceed to inspect it to find the corresponding IP address:
