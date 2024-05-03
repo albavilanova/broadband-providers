@@ -26,6 +26,11 @@ Create an .env file containing:
 DATABASE_URL="postgresql://postgres-user:postgres-password@<IP-address>:5432/postgres"
 ```
 
+And start:
+```
+docker start <hash>
+``` 
+
 Install the dependencies, generate and push the schema and seed the database: 
 
 ```
