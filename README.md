@@ -83,7 +83,7 @@ bun scripts/create/new-product.ts <providerName> <name> <variables> <startDate> 
 Example:
 
 ```
-bun scripts/create/new-product.ts CustomWeather "Wind atlas" "Wind speed, Wind direction" 2019-01-17T21:00:00.000Z 2019-01-17T21:00:00.000Z csv
+bun scripts/create/new-product.ts CustomWeather "Wind atlas" "wind speed, wind direction" 2019-01-17T21:00:00.000Z 2019-01-17T21:00:00.000Z csv
 ```
 
 ### 2. Read

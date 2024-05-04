@@ -23,16 +23,12 @@ const CustomWeather = await db.provider.create({
               "probability of precipitation",
               "visibility",
             ],
-            startDate: new Date('2009-08-02'),
+            startDate: new Date("2009-08-02"),
             formats: ["json", "xml", "csv"],
           },
           {
             name: "U.S. Air Quality Forecasts",
-            variables: [
-              "primary air pollutant",
-              "ozone",
-              "aqi"
-            ],
+            variables: ["primary air pollutant", "ozone", "aqi"],
             formats: ["json", "xml", "csv"],
           },
         ],
@@ -65,10 +61,10 @@ const MeteosourceWeather = await db.provider.create({
               "ozone_total",
               "pm10",
               "pm25",
-              "so2_surface"
+              "so2_surface",
             ],
-            formats: ["json"]
-          }
+            formats: ["json"],
+          },
         ],
       },
     },
@@ -96,3 +92,26 @@ const users = await db.user.createMany({
   ],
 });
 console.log("Users were added");
+
+// Add review
+const user = await db.user.findUnique({
+  where: {
+    email: "alba.vilanova@gmail.com",
+  },
+});
+const product = await db.product.findUnique({
+  where: {
+    name: "Historical Forecast Data",
+  },
+});
+if (user !== null && product !== null) {
+  const reviews = await db.review.create({
+    data: {
+      message: "Very accurate",
+      rating: 10,
+      userId: user.userId,
+      productId: product.productId,
+    },
+  });
+  console.log("A review was added");
+}
