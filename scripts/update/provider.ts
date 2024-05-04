@@ -9,6 +9,8 @@ const [_bun, _script, ...args] = process.argv;
 if (process.argv.length < 4) {
   console.error("The id and at least one more parameter must be passed");
   process.exit(1);
+
+// Update provider by id
 } else {
   // Check which conditions have been passed through command line
   const conditions = checkArgs([
@@ -22,6 +24,7 @@ if (process.argv.length < 4) {
     process.exit(1);
   }
 
+  // Check if provider exists
   const id = parseInt(conditions["id"]);
   const provider = await db.provider.findUnique({
     where: {

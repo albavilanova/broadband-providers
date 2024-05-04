@@ -129,7 +129,7 @@ Examples:
 bun run scripts/read/user.ts --email=david.gomez@gmail.com
 bun run scripts/read/user.ts --position="Research engineer"
 bun run scripts/read/user.ts --firstName=Alba --lastName=Vilanova --organization=BSC
-bun run scripts/read/user.ts --startDate=2024-05-01  --endDate=2024-05-31
+bun run scripts/read/user.ts --startDate=2024-05-01 --endDate=2024-05-31
 ```
 
 **Find providers**
@@ -163,15 +163,16 @@ bun run scripts/read/product.ts
 To get products by specific conditions:
 
 ```
-bun run scripts/read/product.ts --name=<name> --providerName=<providerName> --variables=<variables>
+bun run scripts/read/product.ts --name=<name> --providerName=<providerName> --variables=<variables> --startDate=<startDate> --endDate=<endDate> --formats<formats>
 ```
 
 Examples:
 ```
 bun run scripts/read/product.ts --name="U.S. Air Quality Forecasts"
-bun run scripts/read/product.ts --providerName="CustomWeather"
+bun run scripts/read/product.ts --providerName=CustomWeather
 bun run scripts/read/product.ts --variables="wind speed, wind direction"
-bun run scripts/read/product.ts --providerName="CustomWeather" --variables="aqi"
+bun run scripts/read/product.ts --providerName=CustomWeather --variables=aqi
+bun run scripts/read/product.ts --startDate=2009-01-01 --formats=csv
 ```
 
 **Find reviews**
@@ -198,7 +199,7 @@ Use the read functions to get the entity IDs before using the update functions. 
 To update a user:
 
 ```
-bun run scripts/update/user.ts --id=<userId> --firstName=<firstName> --lastName=<lastName> --email=<email> --organization=<organization> --position=<position>
+bun run scripts/update/user.ts --id=<id> --firstName=<firstName> --lastName=<lastName> --email=<email> --organization=<organization> --position=<position>
 ```
 
 Example:
@@ -212,7 +213,7 @@ bun run scripts/update/user.ts --id=clvshhrc80000109ucw0uwbm2 --organization=Aya
 To update a provider:
 
 ```
-bun run scripts/update/provider.ts --id=<providerId> --name=<name> --headquarters=<headquarters>
+bun run scripts/update/provider.ts --id=<id> --name=<name> --headquarters=<headquarters>
 ```
 
 Example:
@@ -226,7 +227,7 @@ bun run scripts/update/provider.ts --id=2 --headquarters=Spain
 To update a product:
 
 ```
-bun run scripts/update/product.ts --id=<productId> --name=<name> --providerName=<providerName> --variables=<variables>
+bun run scripts/update/product.ts --id=<id> --name=<name> --providerName=<providerName> --variables=<variables>
 ```
 
 **Update reviews**
@@ -234,7 +235,7 @@ bun run scripts/update/product.ts --id=<productId> --name=<name> --providerName=
 To update a review:
 
 ```
-bun run scripts/update/review.ts --id=<reviewId> --rating=<rating> --title=<title> --message=<message>
+bun run scripts/update/review.ts --id=<id> --rating=<rating> --title=<title> --message=<message>
 ```
 
 ### 4. Delete

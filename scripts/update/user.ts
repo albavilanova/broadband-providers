@@ -9,6 +9,8 @@ const [_bun, _script, ...args] = process.argv;
 if (process.argv.length < 4) {
   console.error("The id and at least one more parameter must be passed");
   process.exit(1);
+
+// Update user by id
 } else {
   // Check which conditions have been passed through command line
   const conditions = checkArgs([
@@ -24,7 +26,7 @@ if (process.argv.length < 4) {
     console.error("User id must be passed");
     process.exit(1);
   }
-
+  // Check if user exists
   const user = await db.user.findUnique({
     where: {
       userId: conditions["id"],

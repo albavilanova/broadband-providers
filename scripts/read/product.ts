@@ -11,7 +11,7 @@ if (process.argv.length === 2) {
   console.log("All products: \n", products);
 
 // Show available products by condition
-} else if (process.argv.length >= 3 && process.argv.length <= 5) {
+} else if (process.argv.length >= 3 && process.argv.length <= 8) {
   const products = await getProductsByArgs();
   if (products.length > 0) {
     console.log(`All products with required conditions: \n`, products);
@@ -19,10 +19,10 @@ if (process.argv.length === 2) {
     console.log("No products were found");
   }
 
-// Return error if less than 2 or more than 5 arguments have been passed
+// Return error if less than 2 or more than 8 arguments have been passed
 } else {
   console.error(
-    "Usage: bun scripts/read/product.ts --name=<name> --providerName=<providerName>  --variables=<variables>"
+    "Usage: bun scripts/read/product.ts --name=<name> --providerName=<providerName> --variables=<variables> --startDate=<startDate> --endDate=<endDate> --formats<formats>"
   );
   process.exit(1);
 }

@@ -88,7 +88,14 @@ export const getProductsByArgs = async function () {
   let products: any;
 
   // Check which conditions have been passed through command line
-  const conditions = checkArgs(["name", "providerName", "variables"]);
+  const conditions = checkArgs([
+    "name",
+    "providerName",
+    "variables",
+    "startDate",
+    "endDate",
+    "formats"
+  ]);
   if (conditions) {
     // Get provider if it has been passed
     let provider;
@@ -112,6 +119,23 @@ export const getProductsByArgs = async function () {
         .map((str) => str.trim());
     }
 
+    // Get formats as string array if they have been passed
+    let formatsArray: string[] = [];
+    if (conditions.hasOwnProperty("formats")) {
+      formatsArray = conditions["formats"].split(",").map((str) => str.trim());
+    }
+
+    // Create dates
+    let startDate;
+    let endDate;
+    if (conditions.hasOwnProperty("startDate")) {
+      startDate = new Date(conditions["startDate"]);
+      console.log(`Start date converted to ${startDate}`);
+    }
+    if (conditions.hasOwnProperty("endDate")) {
+      endDate = new Date(conditions["endDate"]);
+      console.log(`End date converted to ${endDate}`);
+    }
     // Find products
     products = await db.product.findMany({
       where: {
@@ -119,6 +143,13 @@ export const getProductsByArgs = async function () {
         provider: provider,
         variables:
           variablesArray.length > 0 ? { hasEvery: variablesArray } : undefined,
+        startDate: {
+          gte: startDate,
+        },
+        endDate: {
+          lte: endDate,
+        },
+        formats: formatsArray.length > 0 ? { hasSome: formatsArray } : undefined,
       },
     });
   } else {
