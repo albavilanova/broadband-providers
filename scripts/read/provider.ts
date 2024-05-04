@@ -9,7 +9,7 @@ const [_bun, _script, ...args] = process.argv;
 
 
 // Show available providers
-if (process.argv.includes("--all") || process.argv.length === 2) {
+if (process.argv.length === 2) {
     const providers = await db.provider.findMany({});
     console.log("All providers: \n", providers);
 } else if (process.argv.length >= 3 && process.argv.length <= 4) {

@@ -113,8 +113,7 @@ bun run scripts/create/review.ts "U.S. Air Quality Forecasts" david.gomez@gmail.
 To get all products:
 
 ```
-bun run scripts/read/product.ts 
-bun run scripts/read/product.ts --all
+bun run scripts/read/product.ts
 ```
 
 To get products by specific conditions (optional):
@@ -137,7 +136,6 @@ To get all providers:
 
 ```
 bun run scripts/read/provider.ts 
-bun run scripts/read/provider.ts --all
 ```
 
 To get providers by specific conditions (optional):
@@ -150,6 +148,20 @@ Examples:
 ```
 bun run scripts/read/provider.ts --name="CustomWeather"
 bun run scripts/read/provider.ts --headquarters="Czech Republic"
+```
+
+**Find users**
+
+To get all users:
+
+```
+bun run scripts/read/user.ts
+```
+
+To get users by specific conditions (optional):
+
+```
+bun run scripts/read/user.ts --firstName=<firstName> --lastName=<lastName> --email=<email> --organization=<organization> --position=<position>
 ```
 
 ### 3. Update

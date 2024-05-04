@@ -8,7 +8,7 @@ import { checkArgs } from "../../src/aux";
 const [_bun, _script, ...args] = process.argv;
 
 // Show available products
-if (process.argv.includes("--all") || process.argv.length === 2) {
+if (process.argv.length === 2) {
   const products = await db.product.findMany({});
   console.log("All products: \n", products);
 
