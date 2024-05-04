@@ -52,6 +52,8 @@ bunx prisma studio
 
 **Create a new user**
 
+Usage:
+
 ```
 bun run scripts/create/user.ts <first-name> <last-name> <organization> <position> <email>
 ```
@@ -63,6 +65,8 @@ bun scripts/create/user.ts Miguel Villarino Amrum "Senior researcher" miguel.vil
 ```
 
 **Create a new provider**
+
+Usage:
 
 ```
 bun run scripts/create/provider.ts <name> <headquarters> <url>
@@ -76,6 +80,8 @@ bun scripts/create/provider.ts Meteomatics Switzerland https://www.meteomatics.c
 
 **Create a new product**
 
+Usage:
+
 ```
 bun scripts/create/product.ts <providerName> <name> <variables> <startDate> <endDate> <formats>
 ```
@@ -84,6 +90,13 @@ Example:
 
 ```
 bun scripts/create/product.ts CustomWeather "Wind atlas" "wind speed, wind direction" 2019-01-17T21:00:00.000Z 2019-01-17T21:00:00.000Z csv
+```
+
+**Create a new review**
+
+
+```
+bun scripts/create/review.ts "U.S. Air Quality Forecasts" david.gomez@gmail.com "Excellent dataset" 8 "Very useful, it would be better if more variables were included"
 ```
 
 ### 2. Read

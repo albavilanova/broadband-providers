@@ -13,6 +13,8 @@ const [_bun, _script, ...args] = process.argv;
 // Store provider in db
 try {
   const [name, headquarters, url] = args;
+
+  // Create new provider
   const newProvider = await db.provider.create({
     data: {
       name,

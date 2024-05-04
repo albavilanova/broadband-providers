@@ -14,7 +14,10 @@ const [_bun, _script, ...args] = process.argv;
 
 // Store user in db
 try {
+  // Get arguments from command line
   const [firstName, lastName, organization, position, email] = args;
+
+  // Create new user
   const newUser = await db.user.create({
     data: {
       firstName,

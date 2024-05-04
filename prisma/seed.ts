@@ -107,7 +107,7 @@ const product = await db.product.findUnique({
 if (user !== null && product !== null) {
   const reviews = await db.review.create({
     data: {
-      message: "Very accurate",
+      title: "Very accurate",
       rating: 10,
       userId: user.userId,
       productId: product.productId,

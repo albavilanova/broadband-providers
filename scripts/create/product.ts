@@ -14,13 +14,18 @@ const [_bun, _script, ...args] = process.argv;
 
 // Store product in db
 try {
+
+  // Get arguments from command line
   const [providerName, name, variables, startDate, endDate, formats] =
     args;
+
+  // Get provider
   const provider = await db.provider.findUnique({
     where: {
       name: providerName,
     },
   });
+  
   if (provider !== null) {
     // Convert strings to string arrays
     const variablesArray = variables.split(',').map((str) => str.trim());;
@@ -39,7 +44,7 @@ try {
     });
     console.log("You created a new product:", newProduct);
   } else {
-    console.log(`Provider ${providerName} does not exist.`);
+    console.error(`Provider ${providerName} does not exist.`);
   }
 } catch (e) {
   console.error(`There was an error creating the product: ${e}`);

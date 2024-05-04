@@ -42,7 +42,8 @@ model User {
 
 model Review {
   reviewId  Int     @id @default(autoincrement())
-  message   String
+  title     String
+  message   String?
   rating    Int
   userId    String
   user      User    @relation(fields: [userId], references: [userId])
