@@ -113,9 +113,9 @@ bun run scripts/create/review.ts "U.S. Air Quality Forecasts" david.gomez@gmail.
 To get all products:
 
 ```
-bun run scripts/find-products.ts 
+bun run scripts/read/product.ts 
 
-bun run scripts/find-products.ts --all
+bun run scripts/read/product.ts --all
 ```
 
 To get products by specific conditions (optional):
