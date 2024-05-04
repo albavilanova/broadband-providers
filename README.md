@@ -40,6 +40,8 @@ bunx prisma db push
 bunx prisma db seed
 ```
 
+This will create two data providers - one with one product and another one with two - two users and a review for one of the datasets.
+
 You can now check its content easily with:
 
 ```
