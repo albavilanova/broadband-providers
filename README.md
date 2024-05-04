@@ -245,7 +245,7 @@ bun run scripts/update/review.ts --id=<id> --rating=<rating> --title=<title> --m
 
 Example: 
 ```
-bun run scripts/update/review.ts --rating=5 --id=1 --message="I have noticed that the data has the wrong units" --title="Wrong units"
+bun run scripts/update/review.ts --rating=5 --id=1 --message="I have noticed that the data have wrong units" --title="Wrong units"
 ```
 
 ### 4. Delete
