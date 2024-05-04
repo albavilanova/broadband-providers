@@ -186,7 +186,7 @@ To get reviews by specific conditions (optional):
 
 Example:
 ```
-bun run scripts/read/review.ts --rating=8
+bun run scripts/read/review.ts --rating=10
 ```
 
 ### 3. Update
@@ -218,11 +218,15 @@ bun run scripts/update/review.ts
 
 **Delete users**
 
+To delete all users:
+
 ```
 bun run scripts/delete/user.ts
 ```
 
 **Delete providers**
+
+To delete all providers:
 
 ```
 bun run scripts/delete/provider.ts
@@ -230,11 +234,15 @@ bun run scripts/delete/provider.ts
 
 **Delete products**
 
+To delete all products:
+
 ```
 bun run scripts/delete/product.ts
 ```
 
 **Delete reviews**
+
+To delete all reviews:
 
 ```
 bun run scripts/delete/review.ts
