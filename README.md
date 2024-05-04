@@ -42,7 +42,7 @@ bunx prisma db seed
 
 This will create two data providers - one with one product and another one with two - two users and a review for one of the datasets.
 
-You can now check its content easily with:
+You can now check its content with:
 
 ```
 bunx prisma studio
@@ -191,30 +191,43 @@ bun run scripts/read/review.ts --rating=10
 
 ### 3. Update
 
+Use the read functions to get the entity IDs before using the update functions. The parameter `id` and at least one more must be passed.
+
 **Update users**
+
+To update a user:
+
 ```
-bun run scripts/update/user.ts
+bun run scripts/update/user.ts --id=<userId> --firstName=<firstName> --lastName=<lastName> --email=<email> --organization=<organization> --position=<position>
 ```
 
 **Update providers**
 
+To update a provider:
+
 ```
-bun run scripts/update/provider.ts
+bun run scripts/update/provider.ts --id=<providerId> --name=<name> --headquarters=<headquarters>
 ```
 
 **Update products**
 
+To update a product:
+
 ```
-bun run scripts/update/product.ts
+bun run scripts/update/product.ts --id=<productId> --name=<name> --providerName=<providerName> --variables=<variables>
 ```
 
 **Update reviews**
 
+To update a review:
+
 ```
-bun run scripts/update/review.ts
+bun run scripts/update/review.ts --id=<reviewId> --rating=<rating> --title=<title> --message=<message>
 ```
 
 ### 4. Delete
+
+The delete functions work in the same fashion as the read functions. Once the conditions have been used to filter the data, the resulting entries will be deleted.
 
 **Delete users**
 
@@ -289,6 +302,10 @@ bun run scripts/delete/review.ts
 ```
 
 To delete reviews by specific conditions (optional):
+
+```
+bun run scripts/delete/product.ts --rating=<rating>
+```
 
 Example:
 ```
