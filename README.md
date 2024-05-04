@@ -61,7 +61,7 @@ bun run scripts/create/user.ts <first-name> <last-name> <organization> <position
 Example:
 
 ```
-bun scripts/create/user.ts Miguel Villarino Amrum "Senior researcher" miguel.villarino@amrum.com
+bun run scripts/create/user.ts Miguel Villarino Amrum "Senior researcher" miguel.villarino@amrum.com
 ```
 
 **Create a new provider**
@@ -75,7 +75,7 @@ bun run scripts/create/provider.ts <name> <headquarters> <url>
 Example:
 
 ```
-bun scripts/create/provider.ts Meteomatics Switzerland https://www.meteomatics.com/
+bun run scripts/create/provider.ts Meteomatics Switzerland https://www.meteomatics.com/
 ```
 
 **Create a new product**
@@ -83,13 +83,13 @@ bun scripts/create/provider.ts Meteomatics Switzerland https://www.meteomatics.c
 Usage:
 
 ```
-bun scripts/create/product.ts <providerName> <name> <variables> <startDate> <endDate> <formats>
+bun run scripts/create/product.ts <providerName> <name> <variables> <startDate> <endDate> <formats>
 ```
 
 Example:
 
 ```
-bun scripts/create/product.ts CustomWeather "Wind atlas" "wind speed, wind direction" 2019-01-17T21:00:00.000Z 2019-01-17T21:00:00.000Z csv
+bun run scripts/create/product.ts CustomWeather "Wind atlas" "wind speed, wind direction" 2019-01-17T21:00:00.000Z 2019-01-17T21:00:00.000Z csv
 ```
 
 **Create a new review**
@@ -103,7 +103,7 @@ bun run scripts/create/review.ts <productName> <email> <title> <rating> <message
 Example:
 
 ```
-bun scripts/create/review.ts "U.S. Air Quality Forecasts" david.gomez@gmail.com "Excellent dataset" 8 "Very useful, it would be better if more variables were included"
+bun run scripts/create/review.ts "U.S. Air Quality Forecasts" david.gomez@gmail.com "Excellent dataset" 8 "Very useful, it would be better if more variables were included"
 ```
 
 ### 2. Read
@@ -126,13 +126,13 @@ bun run scripts/read/product.ts --name=<name> --providerName=<providerName> --va
 
 Examples:
 ```
-bun scripts/read/product.ts --name="U.S. Air Quality Forecasts"
+bun run scripts/read/product.ts --name="U.S. Air Quality Forecasts"
 
-bun scripts/read/product.ts --providerName="CustomWeather"
+bun run scripts/read/product.ts --providerName="CustomWeather"
 
-bun scripts/read/product.ts --variables="wind speed, wind direction"
+bun run scripts/read/product.ts --variables="wind speed, wind direction"
 
-bun scripts/read/product.ts --providerName="CustomWeather" --variables="aqi"
+bun run scripts/read/product.ts --providerName="CustomWeather" --variables="aqi"
 ```
 
 ### 3. Update
