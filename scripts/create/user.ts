@@ -1,5 +1,4 @@
 // CREATE OPERATION: Create a new user
-// Run using bun run user.ts <first-name> <last-name> <organization> <position> <email>
 
 import db from "../../src/db";
 

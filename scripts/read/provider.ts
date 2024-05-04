@@ -1,17 +1,16 @@
 // READ OPERATION: Find providers
-// To find all providers: bun run provider.ts --all
-// To find specific providers (optional args): bun run provider.ts --name=<name> --headquarters=<headquarters>
 
 import db from "../../src/db";
 import { checkArgs } from "../../src/aux";
 
 const [_bun, _script, ...args] = process.argv;
 
-
 // Show available providers
 if (process.argv.length === 2) {
     const providers = await db.provider.findMany({});
     console.log("All providers: \n", providers);
+
+// Show available providers by condition
 } else if (process.argv.length >= 3 && process.argv.length <= 4) {
     // Check which conditions have been passed through command line
     const conditions = checkArgs(["name", "headquarters"]);
@@ -37,5 +36,4 @@ if (process.argv.length === 2) {
       "Usage: bun provider.ts --name=<name> --headquarters=<headquarters>"
     );
     process.exit(1);
-  }
-  
+}

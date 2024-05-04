@@ -89,7 +89,7 @@ bun run scripts/create/product.ts <providerName> <name> <variables> <startDate> 
 Example:
 
 ```
-bun run scripts/create/product.ts CustomWeather "Wind atlas" "wind speed, wind direction" 2019-01-17T21:00:00.000Z 2019-01-17T21:00:00.000Z csv
+bun run scripts/create/product.ts CustomWeather "Wind atlas" "wind speed, wind direction" 2019-01-01 2020-12-31 csv
 ```
 
 **Create a new review**
@@ -161,7 +161,15 @@ bun run scripts/read/user.ts
 To get users by specific conditions (optional):
 
 ```
-bun run scripts/read/user.ts --firstName=<firstName> --lastName=<lastName> --email=<email> --organization=<organization> --position=<position>
+bun run scripts/read/user.ts --firstName=<firstName> --lastName=<lastName> --email=<email> --organization=<organization> --position=<position> --startDate=<startDate>  --endDate=<endDate>
+```
+
+Examples:
+```
+bun run scripts/read/user.ts --email=david.gomez@gmail.com
+bun run scripts/read/user.ts --position="Research engineer"
+bun run scripts/read/user.ts --firstName=Alba --lastName=Vilanova --organization=BSC
+bun run scripts/read/user.ts --startDate=2024-05-01  --endDate=2024-05-31
 ```
 
 ### 3. Update

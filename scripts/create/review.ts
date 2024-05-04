@@ -1,5 +1,4 @@
 // CREATE OPERATION: Create a new review
-// Run using bun run review.ts <productName> <email> <title> <rating> <message>
 
 import db from "../../src/db";
 

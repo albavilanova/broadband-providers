@@ -1,5 +1,4 @@
 // CREATE OPERATION: Create a new product
-// Run using bun run product.ts <providerName> <name> <variables> <startDate> <endDate> <formats>
 
 import db from "../../src/db";
 
@@ -31,13 +30,19 @@ try {
     const variablesArray = variables.split(',').map((str) => str.trim());
     const formatsArray = formats.split(',').map((str) => str.trim());
     
+    // Create dates
+    const startDateJS = new Date(startDate);
+    console.log(`Start date converted to ${startDateJS}`);
+    const endDateJS = new Date(endDate);
+    console.log(`End date converted to ${endDateJS}`);
+
     // Create new product
     const newProduct = await db.product.create({
       data: {
         name,
         variables: variablesArray,
-        startDate,
-        endDate,
+        startDate: startDateJS,
+        endDate: endDateJS,
         formats: formatsArray,
         providerId: provider.providerId,
       },

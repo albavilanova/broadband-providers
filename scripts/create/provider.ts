@@ -1,5 +1,4 @@
 // CREATE OPERATION: Create a new provider
-// Run using bun run provider.ts <name> <headquarters> <url>
 
 import db from "../../src/db";
 

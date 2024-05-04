@@ -1,6 +1,4 @@
 // READ OPERATION: Find products
-// To find all products: bun run product.ts --all
-// To find specific products (optional args): bun run product.ts --name=<name> --providerName=<providerName> --variables=<variables>
 
 import db from "../../src/db";
 import { checkArgs } from "../../src/aux";
