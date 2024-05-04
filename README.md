@@ -114,7 +114,6 @@ To get all products:
 
 ```
 bun run scripts/read/product.ts 
-
 bun run scripts/read/product.ts --all
 ```
 
@@ -127,12 +126,30 @@ bun run scripts/read/product.ts --name=<name> --providerName=<providerName> --va
 Examples:
 ```
 bun run scripts/read/product.ts --name="U.S. Air Quality Forecasts"
-
 bun run scripts/read/product.ts --providerName="CustomWeather"
-
 bun run scripts/read/product.ts --variables="wind speed, wind direction"
-
 bun run scripts/read/product.ts --providerName="CustomWeather" --variables="aqi"
+```
+
+**Find providers**
+
+To get all providers:
+
+```
+bun run scripts/read/provider.ts 
+bun run scripts/read/provider.ts --all
+```
+
+To get providers by specific conditions (optional):
+
+```
+bun run scripts/read/provider.ts --name=<name> --headquarters=<headquarters>
+```
+
+Examples:
+```
+bun run scripts/read/provider.ts --name="CustomWeather"
+bun run scripts/read/provider.ts --headquarters="Czech Republic"
 ```
 
 ### 3. Update

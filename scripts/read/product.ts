@@ -12,9 +12,9 @@ if (process.argv.includes("--all") || process.argv.length === 2) {
   const products = await db.product.findMany({});
   console.log("All products: \n", products);
 
-  // Show available products by condition
+// Show available products by condition
 } else if (process.argv.length >= 3 && process.argv.length <= 5) {
-  // Check if name, providerName and variables have been passed through command line
+  // Check which conditions have been passed through command line
   const conditions = checkArgs(["name", "providerName", "variables"]);
   if (conditions) {
     // Get provider if it has been passed
@@ -56,7 +56,7 @@ if (process.argv.includes("--all") || process.argv.length === 2) {
     }
   }
 
-  // Return error if less than 2 or more than 5 arguments have been passed
+// Return error if less than 2 or more than 5 arguments have been passed
 } else {
   console.error(
     "Usage: bun product.ts --name=<name> --providerName=<providerName>  --variables=<variables>"
