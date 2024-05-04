@@ -94,6 +94,13 @@ bun scripts/create/product.ts CustomWeather "Wind atlas" "wind speed, wind direc
 
 **Create a new review**
 
+Usage:
+
+```
+bun run scripts/create/review.ts <productName> <email> <title> <rating> <message>
+```
+
+Example:
 
 ```
 bun scripts/create/review.ts "U.S. Air Quality Forecasts" david.gomez@gmail.com "Excellent dataset" 8 "Very useful, it would be better if more variables were included"
