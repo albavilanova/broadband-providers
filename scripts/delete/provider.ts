@@ -25,6 +25,7 @@ if (process.argv.length === 2) {
             providerId: provider.providerId,
           },
         });
+        console.log(`Provider with ID ${provider.providerId} was successfully deleted`)
       } catch (e) {
         console.error(
           `There was an error deleting the provider with ID ${provider.providerId}`

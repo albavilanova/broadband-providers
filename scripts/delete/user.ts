@@ -25,6 +25,7 @@ if (process.argv.length === 2) {
               userId: user.userId,
             },
           });
+          console.log(`User with ID ${user.userId} was successfully deleted`)
         } catch (e) {
           console.error(
             `There was an error deleting the user with ID ${user.userId}`

@@ -224,12 +224,38 @@ To delete all users:
 bun run scripts/delete/user.ts
 ```
 
+To delete users by specific conditions (optional):
+
+```
+bun run scripts/delete/user.ts --firstName=<firstName> --lastName=<lastName> --email=<email> --organization=<organization> --position=<position> --startDate=<startDate>  --endDate=<endDate>
+```
+
+Examples:
+```
+bun run scripts/delete/user.ts --email=david.gomez@gmail.com
+bun run scripts/delete/user.ts --position="Research engineer"
+bun run scripts/delete/user.ts --firstName=Alba --lastName=Vilanova --organization=BSC
+bun run scripts/delete/user.ts --startDate=2024-05-01  --endDate=2024-05-31
+```
+
 **Delete providers**
 
 To delete all providers:
 
 ```
 bun run scripts/delete/provider.ts
+```
+
+To delete providers by specific conditions (optional):
+
+```
+bun run scripts/delete/provider.ts --name=<name> --headquarters=<headquarters>
+```
+
+Examples:
+```
+bun run scripts/delete/provider.ts --name="CustomWeather"
+bun run scripts/delete/provider.ts --headquarters="Czech Republic"
 ```
 
 **Delete products**
@@ -240,10 +266,31 @@ To delete all products:
 bun run scripts/delete/product.ts
 ```
 
+To delete products by specific conditions (optional):
+
+```
+bun run scripts/delete/product.ts --name=<name> --providerName=<providerName> --variables=<variables>
+```
+
+Examples:
+```
+bun run scripts/delete/product.ts --name="U.S. Air Quality Forecasts"
+bun run scripts/delete/product.ts --providerName="CustomWeather"
+bun run scripts/delete/product.ts --variables="wind speed, wind direction"
+bun run scripts/delete/product.ts --providerName="CustomWeather" --variables="aqi"
+```
+
 **Delete reviews**
 
 To delete all reviews:
 
 ```
 bun run scripts/delete/review.ts
+```
+
+To delete reviews by specific conditions (optional):
+
+Example:
+```
+bun run scripts/delete/review.ts --rating=10
 ```

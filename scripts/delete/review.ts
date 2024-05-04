@@ -25,6 +25,7 @@ if (process.argv.length === 2) {
               reviewId: review.reviewId,
             },
           });
+          console.log(`Review with ID ${review.reviewId} was successfully deleted`)
         } catch (e) {
           console.error(
             `There was an error deleting the review with ID ${review.reviewId}`

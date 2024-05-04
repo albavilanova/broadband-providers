@@ -25,6 +25,7 @@ if (process.argv.length === 2) {
             productId: product.productId,
           },
         });
+        console.log(`Product with ID ${product.productId} was successfully deleted`)
       } catch (e) {
         console.error(
           `There was an error deleting the product with ID ${product.productId}`
