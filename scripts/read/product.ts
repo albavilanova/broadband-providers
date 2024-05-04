@@ -2,22 +2,8 @@
 // To find all products: bun run product.ts --all
 // To find specific products (optional args): bun run product.ts --name=<name> --providerName=<providerName> --variables=<variables>
 
-import db from "../db";
-
-// Function to return conditions from args
-const checkArgs = function(args: string[]) {
-    let conditions: {[key: string]: string} = {}
-    args.map((arg => {
-        process.argv.map(( inputArg => {
-            if (inputArg.includes("=")) {
-                if (inputArg.split("=")[0].includes(`--${arg}`)) {
-                    conditions[arg] = inputArg.split("=")[1];
-                }
-            }
-        }))
-    }))
-    return conditions
-}
+import db from "../../src/db";
+import { checkArgs } from "../../src/aux";
 
 const [_bun, _script, ...args] = process.argv;
 

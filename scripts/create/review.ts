@@ -1,7 +1,7 @@
 // CREATE OPERATION: Create a new review
 // Run using bun run review.ts <productName> <email> <title> <rating> <message>
 
-import db from "../db";
+import db from "../../src/db";
 
 // Get args from command line
 if (process.argv.length !== 6 && process.argv.length !== 7) {

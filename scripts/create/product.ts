@@ -1,7 +1,7 @@
 // CREATE OPERATION: Create a new product
 // Run using bun run product.ts <providerName> <name> <variables> <startDate> <endDate> <formats>
 
-import db from "../db";
+import db from "../../src/db";
 
 // Get args from command line
 if (process.argv.length !== 8) {

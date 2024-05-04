@@ -1,7 +1,7 @@
 // CREATE OPERATION: Create a new provider
 // Run using bun run provider.ts <name> <headquarters> <url>
 
-import db from "../db";
+import db from "../../src/db";
 
 // Get args from command line
 if (process.argv.length !== 5 ) {
