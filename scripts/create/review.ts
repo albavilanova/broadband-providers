@@ -43,7 +43,7 @@ try {
         productId: product.productId
         },
     });
-    console.log("You created a new review:", newReview);
+    console.log("You created a new review: \n", newReview);
   } else {
     console.error("User or product could not be retrieved from database, please update.")
   }

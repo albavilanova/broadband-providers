@@ -25,11 +25,11 @@ try {
       name: providerName,
     },
   });
-  
+
   if (provider !== null) {
     // Convert strings to string arrays
-    const variablesArray = variables.split(',').map((str) => str.trim());;
-    const formatsArray = formats.split(',').map((str) => str.trim());;
+    const variablesArray = variables.split(',').map((str) => str.trim());
+    const formatsArray = formats.split(',').map((str) => str.trim());
     
     // Create new product
     const newProduct = await db.product.create({
@@ -42,7 +42,7 @@ try {
         providerId: provider.providerId,
       },
     });
-    console.log("You created a new product:", newProduct);
+    console.log("You created a new product: \n", newProduct);
   } else {
     console.error(`Provider ${providerName} does not exist.`);
   }

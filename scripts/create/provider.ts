@@ -22,7 +22,7 @@ try {
       url,
     },
   });
-  console.log("You created a new provider:", newProvider);
+  console.log("You created a new provider: \n", newProvider);
 } catch (e) {
   console.error(`There was an error creating the provider: ${e}`);
 }

@@ -110,14 +110,29 @@ bun scripts/create/review.ts "U.S. Air Quality Forecasts" david.gomez@gmail.com 
 
 **Find products**
 
-To find all products:
+To get all products:
+
 ```
-bun run scripts/find-products.ts
+bun run scripts/find-products.ts 
+
+bun run scripts/find-products.ts --all
 ```
 
-To find all products by provider
+To get products by specific conditions (optional):
+
 ```
-bun run scripts/read/find-products.ts <provider>
+bun run scripts/read/product.ts --name=<name> --providerName=<providerName> --variables=<variables>
+```
+
+Examples:
+```
+bun scripts/read/product.ts --name="U.S. Air Quality Forecasts"
+
+bun scripts/read/product.ts --providerName="CustomWeather"
+
+bun scripts/read/product.ts --variables="wind speed, wind direction"
+
+bun scripts/read/product.ts --providerName="CustomWeather" --variables="aqi"
 ```
 
 ### 3. Update

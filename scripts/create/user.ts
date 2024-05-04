@@ -27,7 +27,7 @@ try {
       email,
     },
   });
-  console.log("You created a new user:", newUser);
+  console.log("You created a new user: \n", newUser);
 } catch (e) {
   console.error(`There was an error creating the user: ${e}`);
 }
