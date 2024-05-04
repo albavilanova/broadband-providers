@@ -227,7 +227,12 @@ bun run scripts/update/provider.ts --id=2 --headquarters=Spain
 To update a product:
 
 ```
-bun run scripts/update/product.ts --id=<id> --name=<name> --providerName=<providerName> --variables=<variables>
+bun run scripts/update/product.ts --id=<id> --name=<name> --providerName=<providerName> --variables=<variables> --startDate=<startDate> --endDate=<endDate> --formats<formats>
+```
+
+Example:
+```
+bun run scripts/update/product.ts --id=2 --startDate=2015-06-01 --variables="nitrogen dioxide, methane" --formats="grib, netcdf"
 ```
 
 **Update reviews**
@@ -236,6 +241,11 @@ To update a review:
 
 ```
 bun run scripts/update/review.ts --id=<id> --rating=<rating> --title=<title> --message=<message>
+```
+
+Example: 
+```
+bun run scripts/update/review.ts --rating=5 --id=1 --message="I have noticed that the data has the wrong units" --title="Wrong units"
 ```
 
 ### 4. Delete
