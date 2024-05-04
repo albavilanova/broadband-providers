@@ -1,6 +1,6 @@
 # Database model
 
-Based on three entities, this database model is based on a schema that could be used to obtain information on different weather data providers.
+Based on four entities, this database model is based on a simple schema that could be used to obtain information on different weather data providers.
 
 ## Initialization
 
