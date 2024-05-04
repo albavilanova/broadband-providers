@@ -174,6 +174,22 @@ bun run scripts/read/user.ts --firstName=Alba --lastName=Vilanova --organization
 bun run scripts/read/user.ts --startDate=2024-05-01  --endDate=2024-05-31
 ```
 
+**Find reviews**
+
+To get all reviews:
+
+```
+bun run scripts/read/review.ts
+```
+
+To get reviews by specific conditions (optional):
+
+Example:
+```
+bun run scripts/read/review.ts --rating=8
+```
+
+
 ### 3. Update
 
 ### 4. Delete

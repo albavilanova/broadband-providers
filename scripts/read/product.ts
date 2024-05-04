@@ -29,7 +29,7 @@ if (process.argv.length === 2) {
       }
     }
 
-    // Get variables as string array is they have been passed
+    // Get variables as string array if they have been passed
     let variablesArray: string[] = [];
     if (conditions.hasOwnProperty("variables")) {
       variablesArray = conditions["variables"]
