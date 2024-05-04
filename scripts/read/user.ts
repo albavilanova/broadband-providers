@@ -53,8 +53,7 @@ if (process.argv.length === 2) {
 // Return error if less than 2 or more than 9 arguments have been passed
 } else {
     console.error(
-      "Usage: bun provider.ts --firstName=<firstName> --lastName=<lastName> --email=<email> --organization=<organization> --position=<position> --startDate=<startDate>  --endDate=<endDate>"
+      "Usage: bun user.ts --firstName=<firstName> --lastName=<lastName> --email=<email> --organization=<organization> --position=<position> --startDate=<startDate>  --endDate=<endDate>"
     );
     process.exit(1);
-  }
-  
+}
