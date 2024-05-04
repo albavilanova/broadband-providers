@@ -5,7 +5,7 @@ import { checkArgs } from "../../src/aux";
 
 const [_bun, _script, ...args] = process.argv;
 
-// Show available users
+// Show all users
 if (process.argv.length === 2) {
     const users = await db.user.findMany({});
     console.log("All users: \n", users);

@@ -5,7 +5,7 @@ import { checkArgs } from "../../src/aux";
 
 const [_bun, _script, ...args] = process.argv;
 
-// Show available products
+// Show all products
 if (process.argv.length === 2) {
   const products = await db.product.findMany({});
   console.log("All products: \n", products);

@@ -5,7 +5,7 @@ import { checkArgs } from "../../src/aux";
 
 const [_bun, _script, ...args] = process.argv;
 
-// Show available reviews
+// Show all reviews
 if (process.argv.length === 2) {
     const reviews = await db.review.findMany({});
     console.log("All reviews: \n", reviews);

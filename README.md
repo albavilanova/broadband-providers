@@ -110,48 +110,6 @@ bun run scripts/create/review.ts "U.S. Air Quality Forecasts" david.gomez@gmail.
 
 ### 2. Read
 
-**Find products**
-
-To get all products:
-
-```
-bun run scripts/read/product.ts
-```
-
-To get products by specific conditions (optional):
-
-```
-bun run scripts/read/product.ts --name=<name> --providerName=<providerName> --variables=<variables>
-```
-
-Examples:
-```
-bun run scripts/read/product.ts --name="U.S. Air Quality Forecasts"
-bun run scripts/read/product.ts --providerName="CustomWeather"
-bun run scripts/read/product.ts --variables="wind speed, wind direction"
-bun run scripts/read/product.ts --providerName="CustomWeather" --variables="aqi"
-```
-
-**Find providers**
-
-To get all providers:
-
-```
-bun run scripts/read/provider.ts 
-```
-
-To get providers by specific conditions (optional):
-
-```
-bun run scripts/read/provider.ts --name=<name> --headquarters=<headquarters>
-```
-
-Examples:
-```
-bun run scripts/read/provider.ts --name="CustomWeather"
-bun run scripts/read/provider.ts --headquarters="Czech Republic"
-```
-
 **Find users**
 
 To get all users:
@@ -174,6 +132,48 @@ bun run scripts/read/user.ts --firstName=Alba --lastName=Vilanova --organization
 bun run scripts/read/user.ts --startDate=2024-05-01  --endDate=2024-05-31
 ```
 
+**Find providers**
+
+To get all providers:
+
+```
+bun run scripts/read/provider.ts 
+```
+
+To get providers by specific conditions (optional):
+
+```
+bun run scripts/read/provider.ts --name=<name> --headquarters=<headquarters>
+```
+
+Examples:
+```
+bun run scripts/read/provider.ts --name="CustomWeather"
+bun run scripts/read/provider.ts --headquarters="Czech Republic"
+```
+
+**Find products**
+
+To get all products:
+
+```
+bun run scripts/read/product.ts
+```
+
+To get products by specific conditions (optional):
+
+```
+bun run scripts/read/product.ts --name=<name> --providerName=<providerName> --variables=<variables>
+```
+
+Examples:
+```
+bun run scripts/read/product.ts --name="U.S. Air Quality Forecasts"
+bun run scripts/read/product.ts --providerName="CustomWeather"
+bun run scripts/read/product.ts --variables="wind speed, wind direction"
+bun run scripts/read/product.ts --providerName="CustomWeather" --variables="aqi"
+```
+
 **Find reviews**
 
 To get all reviews:
@@ -189,7 +189,53 @@ Example:
 bun run scripts/read/review.ts --rating=8
 ```
 
-
 ### 3. Update
 
+**Update users**
+```
+bun run scripts/update/user.ts
+```
+
+**Update providers**
+
+```
+bun run scripts/update/provider.ts
+```
+
+**Update products**
+
+```
+bun run scripts/update/product.ts
+```
+
+**Update reviews**
+
+```
+bun run scripts/update/review.ts
+```
+
 ### 4. Delete
+
+**Delete users**
+
+```
+bun run scripts/delete/user.ts
+```
+
+**Delete providers**
+
+```
+bun run scripts/delete/provider.ts
+```
+
+**Delete products**
+
+```
+bun run scripts/delete/product.ts
+```
+
+**Delete reviews**
+
+```
+bun run scripts/delete/review.ts
+```
