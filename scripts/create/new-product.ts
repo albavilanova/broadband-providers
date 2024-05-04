@@ -23,9 +23,9 @@ try {
   });
   if (provider !== null) {
     // Convert strings to string arrays
-    const variablesArray = Array.isArray(variables) ? variables : [variables];
-    const formatsArray = Array.isArray(formats) ? formats : [formats];
-
+    const variablesArray = variables.split(',').map((str) => str.trim());;
+    const formatsArray = formats.split(',').map((str) => str.trim());;
+    
     // Create new product
     const newProduct = await db.product.create({
       data: {
