@@ -10,7 +10,7 @@ if (process.argv.length === 2) {
   const products = await db.product.findMany({});
   console.log("All products: \n", products);
 
-  // Show available products by condition
+// Show available products by condition
 } else if (process.argv.length >= 3 && process.argv.length <= 5) {
   const products = await getProductsByArgs();
   if (products.length > 0) {
@@ -19,10 +19,10 @@ if (process.argv.length === 2) {
     console.log("No products were found");
   }
 
-  // Return error if less than 2 or more than 5 arguments have been passed
+// Return error if less than 2 or more than 5 arguments have been passed
 } else {
   console.error(
-    "Usage: bun product.ts --name=<name> --providerName=<providerName>  --variables=<variables>"
+    "Usage: bun scripts/read/product.ts --name=<name> --providerName=<providerName>  --variables=<variables>"
   );
   process.exit(1);
 }

@@ -10,7 +10,7 @@ if (process.argv.length === 2) {
   const users = await db.user.findMany({});
   console.log("All users: \n", users);
 
-  // Show available users by condition
+// Show available users by condition
 } else if (process.argv.length >= 3 && process.argv.length <= 9) {
   const users = await getUsersByArgs();
   if (users.length > 0) {
@@ -19,10 +19,10 @@ if (process.argv.length === 2) {
     console.log("No users were found");
   }
 
-  // Return error if less than 2 or more than 9 arguments have been passed
+// Return error if less than 2 or more than 9 arguments have been passed
 } else {
   console.error(
-    "Usage: bun user.ts --firstName=<firstName> --lastName=<lastName> --email=<email> --organization=<organization> --position=<position> --startDate=<startDate>  --endDate=<endDate>"
+    "Usage: bun scripts/read/user.ts --firstName=<firstName> --lastName=<lastName> --email=<email> --organization=<organization> --position=<position> --startDate=<startDate>  --endDate=<endDate>"
   );
   process.exit(1);
 }

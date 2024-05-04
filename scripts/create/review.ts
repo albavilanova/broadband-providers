@@ -5,7 +5,7 @@ import db from "../../src/db";
 // Get args from command line
 if (process.argv.length !== 6 && process.argv.length !== 7) {
   console.error(
-    "Usage: bun review.ts <productName> <email> <title> <rating> <message>"
+    "Usage: bun scripts/create/review.ts <productName> <email> <title> <rating> <message>"
   );
   process.exit(1);
 }

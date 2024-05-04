@@ -4,7 +4,7 @@ import db from "../../src/db";
 
 // Get args from command line
 if (process.argv.length !== 5 ) {
-  console.error("Usage: bun provider.ts <name> <headquarters> <url>");
+  console.error("Usage: bun scripts/create/provider.ts <name> <headquarters> <url>");
   process.exit(1);
 }
 const [_bun, _script, ...args] = process.argv;
