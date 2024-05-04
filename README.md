@@ -1,4 +1,4 @@
-# Database model
+# Weather Data Providers Database
 
 Based on four entities, this database model is based on a simple schema that could be used to obtain information on different weather data providers.
 
