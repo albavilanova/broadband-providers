@@ -118,7 +118,7 @@ To get all users:
 bun run scripts/read/user.ts
 ```
 
-To get users by specific conditions (optional):
+To get users by specific conditions:
 
 ```
 bun run scripts/read/user.ts --firstName=<firstName> --lastName=<lastName> --email=<email> --organization=<organization> --position=<position> --startDate=<startDate>  --endDate=<endDate>
@@ -140,7 +140,7 @@ To get all providers:
 bun run scripts/read/provider.ts 
 ```
 
-To get providers by specific conditions (optional):
+To get providers by specific conditions:
 
 ```
 bun run scripts/read/provider.ts --name=<name> --headquarters=<headquarters>
@@ -160,7 +160,7 @@ To get all products:
 bun run scripts/read/product.ts
 ```
 
-To get products by specific conditions (optional):
+To get products by specific conditions:
 
 ```
 bun run scripts/read/product.ts --name=<name> --providerName=<providerName> --variables=<variables>
@@ -182,7 +182,7 @@ To get all reviews:
 bun run scripts/read/review.ts
 ```
 
-To get reviews by specific conditions (optional):
+To get reviews by specific conditions:
 
 Example:
 ```
@@ -191,7 +191,7 @@ bun run scripts/read/review.ts --rating=10
 
 ### 3. Update
 
-Use the read functions to get the entity IDs before using the update functions. The parameter `id` and at least one more must be passed.
+Use the read functions to get the entity IDs before using the update functions. The `id` and at least one more parameter must be passed through the command line.
 
 **Update users**
 
@@ -201,12 +201,24 @@ To update a user:
 bun run scripts/update/user.ts --id=<userId> --firstName=<firstName> --lastName=<lastName> --email=<email> --organization=<organization> --position=<position>
 ```
 
+Example:
+
+```
+bun run scripts/update/user.ts --id=clvshhrc80000109ucw0uwbm2 --organization=Ayala --position="Senior web developer"
+```
+
 **Update providers**
 
 To update a provider:
 
 ```
 bun run scripts/update/provider.ts --id=<providerId> --name=<name> --headquarters=<headquarters>
+```
+
+Example:
+
+```
+bun run scripts/update/provider.ts --id=2 --headquarters=Spain
 ```
 
 **Update products**
@@ -237,7 +249,7 @@ To delete all users:
 bun run scripts/delete/user.ts
 ```
 
-To delete users by specific conditions (optional):
+To delete users by specific conditions:
 
 ```
 bun run scripts/delete/user.ts --firstName=<firstName> --lastName=<lastName> --email=<email> --organization=<organization> --position=<position> --startDate=<startDate>  --endDate=<endDate>
@@ -259,7 +271,7 @@ To delete all providers:
 bun run scripts/delete/provider.ts
 ```
 
-To delete providers by specific conditions (optional):
+To delete providers by specific conditions:
 
 ```
 bun run scripts/delete/provider.ts --name=<name> --headquarters=<headquarters>
@@ -279,7 +291,7 @@ To delete all products:
 bun run scripts/delete/product.ts
 ```
 
-To delete products by specific conditions (optional):
+To delete products by specific conditions:
 
 ```
 bun run scripts/delete/product.ts --name=<name> --providerName=<providerName> --variables=<variables>
@@ -301,7 +313,7 @@ To delete all reviews:
 bun run scripts/delete/review.ts
 ```
 
-To delete reviews by specific conditions (optional):
+To delete reviews by specific conditions:
 
 ```
 bun run scripts/delete/product.ts --rating=<rating>
