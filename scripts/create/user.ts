@@ -1,12 +1,12 @@
 // CREATE OPERATION: Create a new user
-// Run using bun run new-user.ts <first-name> <last-name> <organization> <position> <email>
+// Run using bun run user.ts <first-name> <last-name> <organization> <position> <email>
 
 import db from "../db";
 
 // Get args from command line
 if (process.argv.length !== 7) {
   console.error(
-    "Usage: bun new-user.ts <first-name> <last-name> <organization> <position> <email>"
+    "Usage: bun user.ts <first-name> <last-name> <organization> <position> <email>"
   );
   process.exit(1);
 }

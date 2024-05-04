@@ -1,12 +1,12 @@
 // CREATE OPERATION: Create a new product
-// Run using bun run new-product.ts <providerName> <name> <variables> <startDate> <endDate> <formats>
+// Run using bun run product.ts <providerName> <name> <variables> <startDate> <endDate> <formats>
 
 import db from "../db";
 
 // Get args from command line
 if (process.argv.length !== 8) {
   console.error(
-    "Usage: bun new-product.ts <providerName> <name> <variables> <startDate> <endDate> <formats>"
+    "Usage: bun product.ts <providerName> <name> <variables> <startDate> <endDate> <formats>"
   );
   process.exit(1);
 }

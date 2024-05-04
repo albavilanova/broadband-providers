@@ -53,37 +53,37 @@ bunx prisma studio
 **Create a new user**
 
 ```
-bun run scripts/create/new-user.ts <first-name> <last-name> <organization> <position> <email>
+bun run scripts/create/user.ts <first-name> <last-name> <organization> <position> <email>
 ```
 
 Example:
 
 ```
-bun scripts/create/new-user.ts Miguel Villarino Amrum "Senior researcher" miguel.villarino@amrum.com
+bun scripts/create/user.ts Miguel Villarino Amrum "Senior researcher" miguel.villarino@amrum.com
 ```
 
 **Create a new provider**
 
 ```
-bun run scripts/create/new-provider.ts <name> <headquarters> <url>
+bun run scripts/create/provider.ts <name> <headquarters> <url>
 ```
 
 Example:
 
 ```
-bun scripts/create/new-provider.ts Meteomatics Switzerland https://www.meteomatics.com/
+bun scripts/create/provider.ts Meteomatics Switzerland https://www.meteomatics.com/
 ```
 
 **Create a new product**
 
 ```
-bun scripts/create/new-product.ts <providerName> <name> <variables> <startDate> <endDate> <formats>
+bun scripts/create/product.ts <providerName> <name> <variables> <startDate> <endDate> <formats>
 ```
 
 Example:
 
 ```
-bun scripts/create/new-product.ts CustomWeather "Wind atlas" "wind speed, wind direction" 2019-01-17T21:00:00.000Z 2019-01-17T21:00:00.000Z csv
+bun scripts/create/product.ts CustomWeather "Wind atlas" "wind speed, wind direction" 2019-01-17T21:00:00.000Z 2019-01-17T21:00:00.000Z csv
 ```
 
 ### 2. Read

@@ -1,11 +1,11 @@
 // CREATE OPERATION: Create a new provider
-// Run using bun run new-provider.ts <name> <headquarters> <url>
+// Run using bun run provider.ts <name> <headquarters> <url>
 
 import db from "../db";
 
 // Get args from command line
 if (process.argv.length !== 5 ) {
-  console.error("Usage: bun new-provider.ts <name> <headquarters> <url>");
+  console.error("Usage: bun provider.ts <name> <headquarters> <url>");
   process.exit(1);
 }
 const [_bun, _script, ...args] = process.argv;
