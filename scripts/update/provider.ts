@@ -45,6 +45,6 @@ if (process.argv.length < 4) {
     var msg = `Provider with id ${conditions["id"]} has changed with this input: \n`
     console.log(msg, conditions);
   } else {
-    console.error(`Provider with id ${conditions["id"]} does not exist in database`)
+    console.error(`Provider does not exist in database`)
   }
 }

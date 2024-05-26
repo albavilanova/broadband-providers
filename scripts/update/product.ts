@@ -95,7 +95,7 @@ if (process.argv.length < 4) {
       );
     }
   } else {
-    console.error(`Product with id ${conditions["id"]} does not exist in database`);
+    console.error(`Product does not exist in database`);
   }
 
 // Return error if more than 9 arguments have been passed
