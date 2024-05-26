@@ -54,10 +54,7 @@ if (process.argv.length < 4) {
         .split(",")
         .map((str) => str.trim());
     }
-
-    // Get formats as string array if they have been passed
-    let formatsArray: string[] = [];
-    if (conditions.hasOwnProperty("formats")) {
+    nProperty("formats")) {
       formatsArray = conditions["formats"].split(",").map((str) => str.trim());
     }
 
@@ -98,7 +95,7 @@ if (process.argv.length < 4) {
       );
     }
   } else {
-    console.error(`Product id ${conditions["id"]} does not exist in database`);
+    console.error(`Product with id ${conditions["id"]} does not exist in database`);
   }
 
 // Return error if more than 9 arguments have been passed

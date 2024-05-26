@@ -53,6 +53,6 @@ if (process.argv.length < 4) {
     var msg = `Review with id ${conditions["id"]} has changed with this input: \n`
     console.log(msg, conditions);
   } else {
-    console.error(`Review id ${conditions["id"]} does not exist in database`)
+    console.error(`Review with id ${conditions["id"]} does not exist in database`)
   }
 }
