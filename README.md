@@ -10,12 +10,14 @@ Create and run the Postgres container by using:
 docker compose -f compose.yml up
 ```
 
-Get the container ID (hash) of the running container by: 
-``` 
+Get the container ID (hash) of the running container by:
+
+```
 docker ps -a
 ```
 
 And proceed to inspect it to find the corresponding IP address:
+
 ```
 docker inspect <hash>
 ```
@@ -27,11 +29,12 @@ DATABASE_URL="postgresql://postgres-user:postgres-password@<IP-address>:5432/pos
 ```
 
 And start:
+
 ```
 docker start <hash>
-``` 
+```
 
-Install the dependencies, generate and push the schema and seed the database: 
+Install the dependencies, generate and push the schema and seed the database:
 
 ```
 bun install
@@ -57,13 +60,13 @@ bunx prisma studio
 Usage:
 
 ```
-bun run scripts/create/user.ts <first-name> <last-name> <organization> <position> <email>
+bun run scripts/create/user.ts --firstName=<first-name> --lastName=<last-name> --organization=<organization> --position=<position> --email=<email>
 ```
 
 Example:
 
 ```
-bun run scripts/create/user.ts Miguel Villarino Amrum "Senior researcher" miguel.villarino@amrum.com
+bun run scripts/create/user.ts --firstName=Miguel --lastName="Villarino" --organization=Amrum --position="Senior researcher" --email=miguel.villarino@amrum.com
 ```
 
 **Create a new provider**
@@ -71,13 +74,13 @@ bun run scripts/create/user.ts Miguel Villarino Amrum "Senior researcher" miguel
 Usage:
 
 ```
-bun run scripts/create/provider.ts <name> <headquarters> <url>
+bun run scripts/create/provider.ts --name=<name> --headquarters=<headquarters> --url=<url>
 ```
 
 Example:
 
 ```
-bun run scripts/create/provider.ts Meteomatics Switzerland https://www.meteomatics.com/
+bun run scripts/create/provider.ts --name=Meteomatics --headquarters=Switzerland --url=https://www.meteomatics.com/
 ```
 
 **Create a new product**
@@ -85,13 +88,13 @@ bun run scripts/create/provider.ts Meteomatics Switzerland https://www.meteomati
 Usage:
 
 ```
-bun run scripts/create/product.ts <providerName> <name> <variables> <startDate> <endDate> <formats>
+bun run scripts/create/product.ts --providerName=<providerName> --name=<name> --variables=<variables> --startDate=<startDate> --endDate=<endDate> --formats=<formats>
 ```
 
 Example:
 
 ```
-bun run scripts/create/product.ts CustomWeather "Wind atlas" "wind speed, wind direction" 2019-01-01 2020-12-31 csv
+bun run scripts/create/product.ts --providerName=CustomWeather --name="Wind atlas" --variables="wind speed, wind direction" --startDate=2019-01-01 --endDate=2020-12-31 --formats=csv
 ```
 
 **Create a new review**
@@ -99,13 +102,13 @@ bun run scripts/create/product.ts CustomWeather "Wind atlas" "wind speed, wind d
 Usage:
 
 ```
-bun run scripts/create/review.ts <productName> <email> <title> <rating> <message>
+bun run scripts/create/review.ts --productName=<productName> --email=<email> --title=<title> --rating=<rating> --message=<message>
 ```
 
 Example:
 
 ```
-bun run scripts/create/review.ts "U.S. Air Quality Forecasts" david.gomez@gmail.com "Excellent dataset" 8 "Very useful, it would be better if more variables were included"
+bun run scripts/create/review.ts --productName="U.S. Air Quality Forecasts" --email=david.gomez@gmail.com --title="Excellent dataset" --rating=8 --message="Very useful, it would be better if more variables were included"
 ```
 
 ### 2. Read
@@ -125,6 +128,7 @@ bun run scripts/read/user.ts --firstName=<firstName> --lastName=<lastName> --ema
 ```
 
 Examples:
+
 ```
 bun run scripts/read/user.ts --email=david.gomez@gmail.com
 bun run scripts/read/user.ts --position="Research engineer"
@@ -137,7 +141,7 @@ bun run scripts/read/user.ts --startDate=2024-05-01 --endDate=2024-05-31
 To get all providers:
 
 ```
-bun run scripts/read/provider.ts 
+bun run scripts/read/provider.ts
 ```
 
 To get providers by specific conditions:
@@ -147,6 +151,7 @@ bun run scripts/read/provider.ts --name=<name> --headquarters=<headquarters>
 ```
 
 Examples:
+
 ```
 bun run scripts/read/provider.ts --name="CustomWeather"
 bun run scripts/read/provider.ts --headquarters="Czech Republic"
@@ -167,6 +172,7 @@ bun run scripts/read/product.ts --name=<name> --providerName=<providerName> --va
 ```
 
 Examples:
+
 ```
 bun run scripts/read/product.ts --name="U.S. Air Quality Forecasts"
 bun run scripts/read/product.ts --providerName=CustomWeather
@@ -186,6 +192,7 @@ bun run scripts/read/review.ts
 To get reviews by specific conditions:
 
 Example:
+
 ```
 bun run scripts/read/review.ts --rating=10
 ```
@@ -231,6 +238,7 @@ bun run scripts/update/product.ts --id=<id> --name=<name> --providerName=<provid
 ```
 
 Example:
+
 ```
 bun run scripts/update/product.ts --id=2 --startDate=2015-06-01 --variables="nitrogen dioxide, methane" --formats="grib, netcdf"
 ```
@@ -243,7 +251,8 @@ To update a review:
 bun run scripts/update/review.ts --id=<id> --rating=<rating> --title=<title> --message=<message>
 ```
 
-Example: 
+Example:
+
 ```
 bun run scripts/update/review.ts --rating=5 --id=1 --message="I have noticed that the data have wrong units" --title="Wrong units"
 ```
@@ -267,6 +276,7 @@ bun run scripts/delete/user.ts --firstName=<firstName> --lastName=<lastName> --e
 ```
 
 Examples:
+
 ```
 bun run scripts/delete/user.ts --email=david.gomez@gmail.com
 bun run scripts/delete/user.ts --position="Research engineer"
@@ -289,6 +299,7 @@ bun run scripts/delete/provider.ts --name=<name> --headquarters=<headquarters>
 ```
 
 Examples:
+
 ```
 bun run scripts/delete/provider.ts --name="CustomWeather"
 bun run scripts/delete/provider.ts --headquarters="Czech Republic"
@@ -309,6 +320,7 @@ bun run scripts/delete/product.ts --name=<name> --providerName=<providerName> --
 ```
 
 Examples:
+
 ```
 bun run scripts/delete/product.ts --name="U.S. Air Quality Forecasts"
 bun run scripts/delete/product.ts --providerName="CustomWeather"
@@ -331,6 +343,7 @@ bun run scripts/delete/product.ts --rating=<rating>
 ```
 
 Example:
+
 ```
 bun run scripts/delete/review.ts --rating=10
 ```
