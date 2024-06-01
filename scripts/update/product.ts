@@ -54,7 +54,8 @@ if (process.argv.length < 4) {
         .split(",")
         .map((str) => str.trim());
     }
-    nProperty("formats")) {
+    let formatsArray: string[] = [];
+    if (conditions.hasOwnProperty("formats")) {
       formatsArray = conditions["formats"].split(",").map((str) => str.trim());
     }
 
